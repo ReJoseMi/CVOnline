@@ -1,0 +1,43 @@
+<mat-toolbar class="header-toolbar">
+    <!-- Sección Superior: Nombre, foto, profesión -->
+    <div class="header-up">
+        <div class="photo-profile">
+          <img src="profile.jpg" alt="Foto de perfil" />
+        </div>
+        <div class="header-text">
+            <span class="header-title">José Miguel Real Mosquero</span>
+            <span class="header-subtitle">Front-end Developer</span>
+        </div>
+    </div>
+  
+    <!-- Sección inferior: Menú de navegación -->
+    <div class="header-down">
+      <div class="header-down-content">
+      <!-- Usar routerLink si ya tienes definidas las rutas en tu AppRoutingModule -->
+      <a mat-button routerLink="/about-me">
+        <mat-icon>person</mat-icon>
+        <span class="nav-text" *ngIf="!isSmallScreen">Acerca de mí</span>
+      </a>
+      <a mat-button routerLink="/contact-me">
+        <mat-icon>mail</mat-icon>
+        <span class="nav-text" *ngIf="!isSmallScreen">Contacto</span>
+      </a>
+      <a mat-button routerLink="/education">
+        <mat-icon>school</mat-icon>
+        <span class="nav-text" *ngIf="!isSmallScreen">Educación</span>
+      </a>
+      <a mat-button routerLink="/work">
+        <mat-icon>work</mat-icon>
+        <span class="nav-text" *ngIf="!isSmallScreen">Experiencia</span>
+      </a>
+      <a mat-button routerLink="/languages">
+        <mat-icon>language</mat-icon>
+        <span class="nav-text" *ngIf="!isSmallScreen">Idiomas</span>
+      </a>
+      <a mat-button routerLink="/skills">
+        <mat-icon>star</mat-icon>
+        <span class="nav-text" *ngIf="!isSmallScreen">Capacidades</span>
+      </a>
+    </div>
+  </div>
+</mat-toolbar>

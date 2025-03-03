@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+// Definir los colores básicos
+$custom-primary: #82c6fe; // Azul celeste
+$custom-accent: #1e88e5;  // Azul fuerte
+$custom-warn: #e53935;    // Rojo
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Exportar las variables
+@export {
+  $custom-primary: $custom-primary;
+  $custom-accent: $custom-accent;
+  $custom-warn: $custom-warn;
+}
+
