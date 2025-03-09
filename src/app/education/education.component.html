@@ -1,1 +1,9 @@
-<p>education works!</p>
+<section class="education">
+    <h2>Educación</h2>
+    <ul>
+      <li *ngFor="let item of educationList">
+        <strong>{{ item.title }}</strong>
+        — {{ item.institution }} ({{ item.period }})
+      </li>
+    </ul>
+</section>

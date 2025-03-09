@@ -13,14 +13,9 @@
     <!-- Sección inferior: Menú de navegación -->
     <div class="header-down">
       <div class="header-down-content">
-      <!-- Usar routerLink si ya tienes definidas las rutas en tu AppRoutingModule -->
-      <a mat-button routerLink="/about-me">
+      <a mat-button routerLink="/">
         <mat-icon>person</mat-icon>
         <span class="nav-text" *ngIf="!isSmallScreen">Acerca de mí</span>
-      </a>
-      <a mat-button routerLink="/contact-me">
-        <mat-icon>mail</mat-icon>
-        <span class="nav-text" *ngIf="!isSmallScreen">Contacto</span>
       </a>
       <a mat-button routerLink="/education">
         <mat-icon>school</mat-icon>
