@@ -1,14 +1,68 @@
+@import '../../styles.scss'; // Ajusta la ruta según tu proyecto
+
 .about-me {
-    padding: 2rem;
-    font-family: 'Open Sans', sans-serif;
-  
+  /* Utiliza espacio vertical para que no se pegue al header ni al footer */
+  padding: clamp(1rem, 5vw, 3rem) clamp(1rem, 10vw, 3rem);
+  margin-bottom: 4rem; 
+  /* Deja un margen inferior para que no quede tapado por el footer fijo */
+
+  /* Un fondo suave con algo de transparencia, para destacar tipo “quote” */
+  background-color: rgba($custom-accent, 0.1);
+  border-left: 4px solid $custom-accent;
+  border-radius: 4px;
+
+  /* Tipografía */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black; /* Texto oscuro para contraste */
+
+  /* Título principal */
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    margin-bottom: 1rem;
+    color: $custom-accent; /* Usa el color primario para destacar el título */
+    font-weight: bold;
+    text-align: left; /* O center si prefieres */
+  }
+
+  /* Párrafo de descripción */
+  p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Efecto “cita” */
+  /* Opcional: un icono semitransparente de comillas o similar */
+  position: relative;
+  &::before {
+    content: "“";
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: rgba($custom-accent, 0.3);
+    position: absolute;
+    top: clamp(-0.5rem, -4vw, -2rem);
+    left: clamp(-0.5rem, -4vw, -2rem);
+  }
+  &::after {
+    content: "”";
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: rgba($custom-accent, 0.3);
+    position: absolute;
+    bottom: clamp(-0.5rem, -4vw, -2rem);
+    right: clamp(-0.5rem, -4vw, -2rem);
+  }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 600px) {
+  .about-me {
+    margin-bottom: 6rem; 
+    /* Aumentar el margen si el footer fijo tapa el texto */
+    
     h1 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
+      text-align: center; /* Centra el título en móviles, por ejemplo */
     }
-  
     p {
-      margin-bottom: 1rem;
-      line-height: 1.5;
+      text-align: justify; /* Ajusta a tu gusto */
     }
+  }
 }

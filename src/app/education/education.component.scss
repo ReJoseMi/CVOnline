@@ -1,18 +1,79 @@
+@import '../../styles.scss'; // Ajusta la ruta según tu proyecto
+
 .education {
-    padding: 1rem;
+  /* Espacio interno flexible según el viewport */
+  padding: clamp(1rem, 5vw, 3rem);
+  margin-bottom: 2rem; 
+  /* Para separarla de otros bloques o del footer */
+
+  /* Fondo suave y un borde lateral con color acento */
+  background-color: rgba($custom-accent, 0.1);
+  border-left: 4px solid $custom-accent;
+  border-radius: 4px;
+
+  /* Tipografía y color */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+
+  /* Título principal */
+  h2 {
+    color: $custom-accent; /* Usa el color primario para destacar el título */
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    margin-bottom: 1rem;
+    text-align: left; /* Ajusta a tu gusto: left, center, etc. */
+    font-weight: bold;
+  }
+
+  /* Lista de formaciones */
+  ul {
+    list-style: none;
+    padding-left: 1.5rem;
+
+    li {
+      position: relative;     // Permite posicionar el pseudo-elemento
+      margin-bottom: 0.75rem; // Separación entre elementos
+      line-height: 1.4;
+      strong {
+        color: $custom-accent;
+      }
   
-    h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-  
-    ul {
-      list-style: disc;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;              // Se ajusta la posición horizontal
+        top: 0.5rem;          // Ajusta la posición vertical a tu gusto
+        width: 0.5rem;        // Tamaño del círculo
+        height: 0.5rem;
+        border-radius: 50%;   // Lo hace circular
+        background-color: rgba($custom-accent, 0.3); // Color de marca
+      }
+      
+      /* Aseguramos que el texto no se superponga al círculo */
       padding-left: 1.5rem;
-  
-      li {
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
+
+      a {
+        text-decoration: none;      // Quita el subrayado
+        color: $custom-accent;      // Ajusta el color al acento (o el que prefieras)
+        font-weight: bold;          // Destaca el texto
+
+        &:hover {
+          /* Efecto de hover: por ejemplo, un subrayado suave o cambio de color */
+          text-decoration: underline;
+          color: darken($custom-accent, 10%); // Oscurece un poco el color
+        }
       }
     }
   }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .education {
+    margin-bottom: 3rem; 
+    /* Un poco más de espacio si el footer es fijo */
+
+    h2 {
+      text-align: center; /* Si deseas centrar el título en móviles */
+    }
+  }
+}
